@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\NewsController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/show', [NewsController::class, 'show']);
+Route::get('/create', [NewsController::class, 'create']);
